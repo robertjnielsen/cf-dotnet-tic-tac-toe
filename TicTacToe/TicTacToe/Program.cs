@@ -26,6 +26,11 @@ namespace TicTacToe
             Player playerTwo = NewPlayer(playerTwoName);
         }
 
+        /// <summary>
+        /// Creates a new Player instance, and assigns the Name property of the Player object to the user's input.
+        /// </summary>
+        /// <param name="playerName">User input to be assigned as the Name property of the new Player object.</param>
+        /// <returns>Returns the new Player object, with a user determined Name property.</returns>
         public static Player NewPlayer(string playerName)
         {
             Player newPlayer = new Player();
