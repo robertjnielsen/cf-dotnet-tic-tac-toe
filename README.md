@@ -11,6 +11,9 @@ _Author: [Robert James Nielsen](https://github.com/robertjnielsen)_
 
 ## Change Log
 
+**1.1** - 20200321
+- Starting a new game now instantiates two new Player objects.
+
 **1.0** - 20200321
 - Utilized assignment starter code.
 - Repository initiaized, projects / solutions created.
