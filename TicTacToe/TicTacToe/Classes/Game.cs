@@ -28,11 +28,11 @@ namespace TicTacToe.Classes
 		/// Activate the Play of the game
 		/// </summary>
 		/// <returns>Winner</returns>
-		public Player Play()
+		public void Play()
 		{
+			// TODO: Change the return type back to Player. It was changed to void for testing purposes.
 
 			//TODO: Complete this method and utilize the rest of the class structure to play the game.
-
 			/*
              * Complete this method by constructing the logic for the actual playing of Tic Tac Toe. 
              * 
