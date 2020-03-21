@@ -28,7 +28,7 @@ namespace TicTacToe.Classes
 		/// Activate the Play of the game
 		/// </summary>
 		/// <returns>Winner</returns>
-		public void Play()
+		public Player Play()
 		{
 			// TODO: Change the return type back to Player. It was changed to void for testing purposes.
 
@@ -47,6 +47,28 @@ namespace TicTacToe.Classes
 
             Use any and all pre-existing methods in this program to help construct the method logic. 
              */
+
+			PlayerOne.IsTurn = true;
+
+			int numberOfTurns = 1;
+
+			while (numberOfTurns < 10)
+			{
+				Player nextPlayer = NextPlayer();
+				Board.DisplayBoard();
+				Console.WriteLine();
+				nextPlayer.TakeTurn(Board);
+
+				if (CheckForWinner(Board))
+				{
+					break;
+				}
+
+				SwitchPlayer();
+				numberOfTurns++;
+			}
+
+			return Winner;
 		}
 
 
@@ -84,6 +106,13 @@ namespace TicTacToe.Classes
 
 				// TODO:  Determine a winner has been reached. 
 				// return true if a winner has been reached. 
+				Player currentPlayer = NextPlayer();
+				if (currentPlayer.Marker == a && currentPlayer.Marker == b && currentPlayer.Marker == c)
+				{
+					Winner = currentPlayer;
+					return true;
+				}
+
 
 			}
 

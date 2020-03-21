@@ -7,6 +7,7 @@ namespace TicTacToe.Classes
     public class Player
     {
 		public string Name { get; set; }
+
 		/// <summary>
 		/// P1 is X and P2 will be O
 		/// </summary>
@@ -23,7 +24,7 @@ namespace TicTacToe.Classes
 			Position desiredCoordinate = null;
 			while (desiredCoordinate is null)
 			{
-				Console.WriteLine("Please select a location");
+				Console.WriteLine("Please select a location:");
 				Int32.TryParse(Console.ReadLine(), out int position);
 				desiredCoordinate = PositionForNumber(position);
 			}
@@ -55,7 +56,7 @@ namespace TicTacToe.Classes
 		{
 			IsTurn = true;
 
-			Console.WriteLine($"{Name} it is your turn");
+			Console.WriteLine($"{Name}, it is your turn.");
 
 			Position position = GetPosition(board);
 
