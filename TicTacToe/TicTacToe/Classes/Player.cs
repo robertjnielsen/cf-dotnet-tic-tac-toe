@@ -24,7 +24,7 @@ namespace TicTacToe.Classes
 			Position desiredCoordinate = null;
 			while (desiredCoordinate is null)
 			{
-				Console.WriteLine($"{Name}, please select a location:");
+				Console.WriteLine("Please select a location:");
 				Int32.TryParse(Console.ReadLine(), out int position);
 				desiredCoordinate = PositionForNumber(position);
 			}

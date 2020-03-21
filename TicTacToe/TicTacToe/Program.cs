@@ -10,7 +10,12 @@ namespace TicTacToe
             Console.WriteLine("Let's play Tic-Tac-Toe!");
             Game game = NewGame();
 
-            game.Play();
+            Player winner = game.Play();
+
+            Console.WriteLine();
+            game.Board.DisplayBoard();
+            Console.WriteLine();
+            Console.WriteLine($"{winner.Name}, you've won!");
 
             // You are requesting a Winner to be returned, Determine who the winner is output the celebratory message to the correct player. If it's a draw, tell them that there is no winner.
         }
