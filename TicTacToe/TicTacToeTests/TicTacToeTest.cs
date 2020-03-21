@@ -16,5 +16,19 @@ namespace TicTacToeTests
 
             Assert.Equal(NewPlayerResult.Name, playerNameInput);
         }
+
+        [Fact]
+        public void PlayerTurnsSwitchAfterAPlayerCompletesTheirTurn()
+        {
+            Player playerOne = new Player();
+            Player playerTwo = new Player();
+            playerOne.IsTurn = true;
+            Game testGame = new Game(playerOne, playerTwo);
+
+            testGame.SwitchPlayer();
+            Player nextPlayer = testGame.NextPlayer();
+
+            Assert.Equal(playerTwo, nextPlayer);
+        }
     }
 }
