@@ -12,10 +12,16 @@ namespace TicTacToe
 
             Player winner = game.Play();
 
-            Console.WriteLine();
             game.Board.DisplayBoard();
             Console.WriteLine();
-            Console.WriteLine($"{winner.Name}, you've won!");
+            if (winner != null)
+            {
+                Console.WriteLine($"{winner.Name}, you've won!");
+            }
+            else if (winner == null)
+            {
+                Console.WriteLine("It's a draw! Nobody wins...");
+            }
 
             // You are requesting a Winner to be returned, Determine who the winner is output the celebratory message to the correct player. If it's a draw, tell them that there is no winner.
         }
