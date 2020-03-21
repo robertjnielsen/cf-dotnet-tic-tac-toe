@@ -8,13 +8,13 @@ namespace TicTacToeTests
     public class TicTacToeTest
     {
         [Fact]
-        public void CreatingPlayerOneReturnsTheNameOfPlayerOne()
+        public void CreatingPlayerReturnsTheNameOfTheNewPlayer()
         {
-            string playerOne = "Dummmy";
+            string playerNameInput = "Dummmy";
 
-            Player playerOneResult = Program.NewPlayer(playerOne);
+            Player NewPlayerResult = Program.NewPlayer(playerNameInput);
 
-            Assert.Equal(playerOneResult.Name, playerOne);
+            Assert.Equal(NewPlayerResult.Name, playerNameInput);
         }
     }
 }

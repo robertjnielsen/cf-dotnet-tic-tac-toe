@@ -18,7 +18,11 @@ namespace TicTacToe
         {
             Console.WriteLine("Please enter a name for Player One:");
             string playerOneName = Console.ReadLine();
-            Player PlayerOne = NewPlayer(playerOneName);
+            Player playerOne = NewPlayer(playerOneName);
+
+            Console.WriteLine("Please enter a name for Player Two:");
+            string playerTwoName = Console.ReadLine();
+            Player playerTwo = NewPlayer(playerTwoName);
         }
 
         public static Player NewPlayer(string playerName)
