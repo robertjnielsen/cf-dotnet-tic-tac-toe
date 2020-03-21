@@ -8,22 +8,32 @@ namespace TicTacToe
         static void Main(string[] args)
         {
             Console.WriteLine("Let's play Tic-Tac-Toe!");
-            NewGame();
+            Game game = NewGame();
 
-            // TODO: Setup your game. Create a new method that creates your players and instantiates the game class. Call that method in your Main method.
+            game.Play();
 
             // You are requesting a Winner to be returned, Determine who the winner is output the celebratory message to the correct player. If it's a draw, tell them that there is no winner.
         }
 
-        public static void NewGame()
+        /// <summary>
+        /// Creates a new Game instance, and assigns two new Player instances to the object.
+        /// </summary>
+        /// <returns>Returns a new Game object.</returns>
+        public static Game NewGame()
         {
             Console.WriteLine("Please enter a name for Player One:");
             string playerOneName = Console.ReadLine();
             Player playerOne = NewPlayer(playerOneName);
+            playerOne.Marker = "X";
 
             Console.WriteLine("Please enter a name for Player Two:");
             string playerTwoName = Console.ReadLine();
             Player playerTwo = NewPlayer(playerTwoName);
+            playerTwo.Marker = "O";
+
+            Game newGame = new Game(playerOne, playerTwo);
+
+            return newGame;
         }
 
         /// <summary>
