@@ -9,16 +9,20 @@ namespace TicTacToe.Classes
 		public string Name { get; set; }
 
 		/// <summary>
-		/// P1 is X and P2 will be O
+		/// P1 is X and P2 will be O.
 		/// </summary>
 		public string Marker { get; set; }
 
 		/// <summary>
-		/// Flag to determine if it is the user's turn
+		/// Flag to determine if it is the user's turn.
 		/// </summary>
 		public bool IsTurn { get; set; }
 
-
+		/// <summary>
+		/// Asks the user to choose a position on the board, and calls PositionForNumber to determine matching coordinates on the board for the user's input.
+		/// </summary>
+		/// <param name="board">The Board instance being 'played' on.</param>
+		/// <returns>Returns a set of coordinates on the board that coincide with the user's integer input.</returns>
 		public Position GetPosition(Board board)
 		{
 			Position desiredCoordinate = null;
@@ -32,7 +36,11 @@ namespace TicTacToe.Classes
 
 		}
 
-
+		/// <summary>
+		/// Compares the user's integer input with the coordinates in the game board's 2d matrix.
+		/// </summary>
+		/// <param name="position">The user's integer input.</param>
+		/// <returns>Returns a Position instance that represents a point within the game board's 2d matrix.</returns>
 		public static Position PositionForNumber(int position)
 		{
 			switch (position)
@@ -51,7 +59,11 @@ namespace TicTacToe.Classes
 			}
 		}
 
-
+		/// <summary>
+		/// Asks a user to enter a position on the board they would like to mark. Adds their mark to that position if it is not already occupied.
+		/// </summary>
+		/// <param name="board">The current game Board instance.</param>
+		/// <returns>Returns a boolean value determined by whether or not the position the user selected has been previously marked or not.</returns>
 		public bool TakeTurn(Board board)
 		{
 			IsTurn = true;

@@ -7,7 +7,7 @@ namespace TicTacToe.Classes
     public class Board
     {
 		/// <summary>
-		/// Tic Tac Toe Gameboard states
+		/// Tic Tac Toe Gameboard states.
 		/// </summary>
 		public string[,] GameBoard = new string[,]
 		{
@@ -16,11 +16,11 @@ namespace TicTacToe.Classes
 			{"7", "8", "9"},
 		};
 
-
+		/// <summary>
+		/// Displays the current state of the game board.
+		/// </summary>
 		public void DisplayBoard()
 		{
-
-			//TODO: Output the board to the console
 			for (int i = 0; i < GameBoard.GetLength(0); i++)
 			{
 				Console.WriteLine();
