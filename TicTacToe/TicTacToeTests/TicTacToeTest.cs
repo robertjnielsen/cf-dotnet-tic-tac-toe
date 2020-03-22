@@ -8,16 +8,6 @@ namespace TicTacToeTests
     public class TicTacToeTest
     {
         [Fact]
-        public void CreatingPlayerObjectCanReturnTheNameOfTheNewPlayer()
-        {
-            string playerNameInput = "Dummmy";
-
-            Player NewPlayerResult = Program.NewPlayer(playerNameInput);
-
-            Assert.Equal(NewPlayerResult.Name, playerNameInput);
-        }
-
-        [Fact]
         public void PlayerTurnsSwitchAfterAPlayerCompletesTheirTurn()
         {
             Player playerOne = new Player();
@@ -85,6 +75,25 @@ namespace TicTacToeTests
             Position testPosition = Player.PositionForNumber(userInput);
 
             Assert.Equal(boardRowValue, testPosition.Column);
+        }
+
+        [Fact]
+        public void ReturnsTrueIfAWinnerIsDeclared()
+        {
+            Player testPlayerOne = new Player();
+            testPlayerOne.Marker = "X";
+            testPlayerOne.IsTurn = true;
+            Player testPlayerTwo = new Player();
+            testPlayerOne.Marker = "O";
+            Game testGame = new Game(testPlayerOne, testPlayerTwo);
+            testGame.Board.GameBoard[0, 0] = testPlayerOne.Marker;
+            testGame.Board.GameBoard[0, 1] = testPlayerOne.Marker;
+            testGame.Board.GameBoard[0, 2] = testPlayerOne.Marker;
+
+            bool isAWinner = testGame.CheckForWinner(testGame.Board);
+
+            Assert.True(isAWinner);
+
         }
     }
 }
