@@ -57,15 +57,19 @@ namespace TicTacToe.Classes
 				Player nextPlayer = NextPlayer();
 				Board.DisplayBoard();
 				Console.WriteLine();
-				nextPlayer.TakeTurn(Board);
+				bool freeSpace = nextPlayer.TakeTurn(Board);
 
 				if (CheckForWinner(Board))
 				{
 					break;
 				}
 
-				SwitchPlayer();
-				numberOfTurns++;
+				if (freeSpace)
+				{
+					SwitchPlayer();
+					numberOfTurns++;
+				}
+
 			}
 
 			return Winner;
