@@ -10,10 +10,10 @@ namespace TicTacToe.Classes
 		public int Column { get; set; }
 
 		/// <summary>
-		/// Position on the gameboard being initialized 
+		/// Position on the gameboard being initialized.
 		/// </summary>
-		/// <param name="row">row number</param>
-		/// <param name="column">column number</param>
+		/// <param name="row">Row number.</param>
+		/// <param name="column">Column number.</param>
 		public Position(int row, int column)
 		{
 			Row = row;
